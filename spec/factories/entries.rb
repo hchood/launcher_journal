@@ -5,5 +5,6 @@ FactoryGirl.define do
     title "MyString"
     description "MyText"
     category_id 1
+    user_id 14
   end
 end
