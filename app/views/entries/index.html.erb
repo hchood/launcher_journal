@@ -1,0 +1,21 @@
+<h1>Entries</h1>
+
+<h3>List of all entries by all users (sorted by date created, descending)</h3>
+
+<table>
+  <tr>
+    <th>Date Created</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Categories</th>
+  </tr>
+  <% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.created_at %></td>
+    <td><%= entry.title %></td>
+    <td><%= entry.description %></td>
+    <td><%= entry.category.name %></td>
+  </tr>
+  <% end %>
+</table>
+
