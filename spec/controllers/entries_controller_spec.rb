@@ -17,22 +17,25 @@ describe EntriesController do
   end
 
   describe '.new' do
-
+    # it displays a form?
   end
 
   describe '.create' do
     it 'saves a new entry to the database'
+    it 'redirects to the #new action'
   end
 
   describe '.edit' do
-
+    # it displays a form?
   end
 
   describe '.update' do
     it 'changes the attributes of an existing entry'
+    it 'redirects to the #edit action'
   end
 
   describe '.destroy' do
     it 'deletes an entry from the database'
+    it 'redirects to the #index action'
   end
 end
