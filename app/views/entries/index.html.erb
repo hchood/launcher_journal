@@ -5,6 +5,7 @@
 <table>
   <tr>
     <th>Date Created</th>
+    <th>User</th>
     <th>Title</th>
     <th>Description</th>
     <th>Categories</th>
@@ -12,6 +13,7 @@
   <% @entries.each do |entry| %>
   <tr>
     <td><%= entry.created_at %></td>
+    <td><%= "#{entry.user.first_name} #{entry.user.last_name}" %></td>
     <td><%= entry.title %></td>
     <td><%= entry.description %></td>
     <td><%= entry.category.name %></td>
