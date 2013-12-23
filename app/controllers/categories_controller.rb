@@ -7,4 +7,9 @@ class CategoriesController < ActionController::Base
     @categories = Category.all.order('name ASC')
   end
 
+  # GET /categories/new
+  def new
+    @category = Category.new
+  end
+
 end
