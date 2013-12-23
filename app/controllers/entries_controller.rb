@@ -1,4 +1,4 @@
-class EntriesController < ActionController::Base
+class EntriesController < ApplicationController
 
   respond_to :html # what does this do?
 
@@ -40,6 +40,14 @@ class EntriesController < ActionController::Base
     else
       render 'edit'
     end
+  end
+
+  #DELETE /entries/1
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+
+    redirect_to entries_path
   end
 
   private
