@@ -16,9 +16,11 @@
     <td><%= "#{entry.user.first_name} #{entry.user.last_name}" %></td>
     <td><%= entry.title %></td>
     <td><%= entry.description %></td>
-    <td><%= entry.category.name %></td>
+    <td> Placeholder for category </td>
     <td><%= link_to 'Show', entry_path(entry) %></td>
   </tr>
   <% end %>
+
+  <%= link_to 'New Entry', new_entry_path %>
 </table>
 
