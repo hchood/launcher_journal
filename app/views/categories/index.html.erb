@@ -1,5 +1,10 @@
 <h1>Categories</h1>
 
+<ul>
+  <li><%= link_to 'New Category', new_category_path %></li>
+  <li><%= link_to 'Entries', entries_path %></li>
+</ul>
+
 <h3>List of all categories (sorted by name)</h3>
 
 <table>
@@ -9,6 +14,8 @@
   <% @categories.each do |category| %>
   <tr>
     <td><%= category.name %></td>
+    <td><%= link_to 'Show', category_path(category) %></td>
+    <td><%= link_to 'Edit', edit_category_path(category) %></td>
   </tr>
   <% end %>
 </table>
