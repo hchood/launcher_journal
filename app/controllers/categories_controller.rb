@@ -7,8 +7,4 @@ class CategoriesController < ActionController::Base
     @categories = Category.all.order('name ASC')
   end
 
-  #GET /entries/1
-  def show
-    @categories = Category.find(params[:id])
-  end
 end
