@@ -29,6 +29,6 @@ class EntriesController < ActionController::Base
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :description, :user_id, :category_id, {include_blank: true})
+    params.require(:entry).permit(:title, :description, :user_id, :category_id)
   end
 end
