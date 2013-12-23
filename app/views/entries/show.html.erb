@@ -1,20 +1,21 @@
-<h1>Entries</h1>
-
-<h3><%= "List of all entries by #{@user.first_name} #{@user.last_name}" %></h3>
+<h1>Entry Number <%= "#{params[:id]}"%> </h1>
 
 <table>
   <tr>
     <th>Date Created</th>
+    <th>User</th>
     <th>Title</th>
     <th>Description</th>
     <th>Category</th>
   </tr>
-  <% @entries.each do |entry| %>
+
   <tr>
-    <td><%= entry.created_at %></td>
-    <td><%= entry.title %></td>
-    <td><%= entry.description %></td>
-    <td><%= entry.category.name %></td>
+    <td><%= @entry.created_at %></td>
+    <td><%= "#{@entry.user.first_name} #{@entry.user.last_name}" %></td>
+    <td><%= @entry.title %></td>
+    <td><%= @entry.description %></td>
+    <td><%= @entry.category.name %></td>
+    <td><%= link_to 'Show', entry_path(@entry) %></td>
   </tr>
-  <% end %>
+
 </table>

@@ -9,7 +9,6 @@ class EntriesController < ActionController::Base
 
   #GET /entries/1
   def show
-    @user = User.find(params[:id])
-    @entries = Entry.where(user_id: @user.id)
+    @entry = Entry.find(params[:id])
   end
 end
