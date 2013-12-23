@@ -12,6 +12,11 @@ class CategoriesController < ActionController::Base
     @category = Category.new
   end
 
+  # GET /categories/1
+  def show
+    @category = Category.find(params[:id])
+  end
+
   # POST /articles
   def create
     @category = Category.new(category_params)
