@@ -17,6 +17,7 @@
     <td><%= entry.title %></td>
     <td><%= entry.description %></td>
     <td><%= entry.category.name %></td>
+    <td><%= link_to 'Show', entry_path(entry) %></td>
   </tr>
   <% end %>
 </table>
