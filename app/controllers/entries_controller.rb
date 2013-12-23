@@ -17,12 +17,28 @@ class EntriesController < ActionController::Base
     @entry = Entry.new
   end
 
+  #POST /entries
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
       redirect_to entries_path
     else
       render 'new'
+    end
+  end
+
+  #GET /entries/1/edit
+  def edit
+    @entry = Entry.find(params[:id])
+  end
+
+  #POST /entries/1
+  def update
+    @entry = Entry.find(params[:id])
+    if @entry.update(entry_params)
+      redirect_to entry_path(@entry)
+    else
+      render 'edit'
     end
   end
 
