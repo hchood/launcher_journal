@@ -22,10 +22,15 @@ class CategoriesController < ActionController::Base
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to @category, notice: 'Category was successfully created.'
+      redirect_to :categories
     else
       render action: 'new'
     end
+  end
+
+  # GET /categories/1/edit
+  def edit
+    @category = Category.find(params[:id])
   end
 
   private
