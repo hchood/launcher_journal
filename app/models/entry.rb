@@ -5,4 +5,12 @@ class Entry < ActiveRecord::Base
 
   belongs_to :category, inverse_of: :entries
   belongs_to :user, inverse_of: :entries
+
+  def category_name
+    if category.nil?
+      ""
+    else
+      category.name
+    end
+  end
 end
