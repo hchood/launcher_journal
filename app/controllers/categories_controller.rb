@@ -1,4 +1,4 @@
-class CategoriesController < ActionController::Base
+class CategoriesController < ApplicationController
 
   respond_to :html # what does this do?
 
@@ -31,6 +31,16 @@ class CategoriesController < ActionController::Base
   # GET /categories/1/edit
   def edit
     @category = Category.find(params[:id])
+  end
+
+  #PUT/PATCH /categories/1
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      redirect_to categories_path
+    else
+      render 'edit'
+    end
   end
 
   private
