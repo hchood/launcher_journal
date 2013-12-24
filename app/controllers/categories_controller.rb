@@ -43,6 +43,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  #DELETE /categories/1
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+
+    redirect_to categories_path
+  end
+
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.
